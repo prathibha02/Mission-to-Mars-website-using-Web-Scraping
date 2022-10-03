@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Mission to Mars</title>
+  <!-- CSS BOOTSTRAP -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  
+</head>
+
+<body>
+  <div class="container">
+    <!-- Add Jumbotron to Header -->
+    <div class="jumbotron text-center"
+      style="background-image: url(http://gortoncenter.org/wp-content/uploads/2018/05/The-Martian.jpg); height: 400px; background-position: center; background-size: cover;">
+      <h1 class="display-3" style="color:whitesmoke"><b>Mission to Mars</b></h1>
+      <!-- Add a button to activate scraping script -->
+      <p><a class="btn btn-danger btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+    </div>
+
+    <!-- Add section for Mars News -->
+    <div class="container">
+      <div class="row" id="mars-news">
+        <div class="media">
+          <div class="media-body">
+            <h4 style="font-size:largest">Latest Mars News</h4>
+            <h5 style="font-size:medium">{{mars.news}}</h5>
+            <p style="font-size:small">{{mars.paragraph}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section for Featured Image and Facts table -->
+    <div class="container">
+      <div class="row" id="mars-featured-image">
+        <div class="col-md-6">
+          <h4>Featured Mars Image</h4>
+          <!-- If Images are False/None/Non-Existent, Then Default to Error Message -->
+          <img src="{{mars.featured_image}}" class="img-responsive" style="max-width:100%; max-height: auto;"
+            alt="Mars Featured Image" />
+        </div>
+        <div class="col-md-6">
+          <h4>Mars Facts</h4>
+          <table>{{mars.facts|safe}}</table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section for Mars Hemispheres -->
+    <h4 style="padding-top: 50px; margin-top: 100px; text-align: center;">Mars Hemispheres</h4>
+    <div class="card-deck">
+      <hr>
+      <div class="col-md-12">
+      <!-- <div class="col-md-12" style="padding-right:0.05px; padding: left 0.05px"> -->
+        <div class="row" id="mars-hemispheres">
+          {% for hemisphere in mars.hemispheres %}
+          <div class="col-md-3">
+            <div class="card text-white bg-danger" style="margin: 30px;">
+              <!-- If Images are False/None/Non-Existent, Then Default to Error Message -->
+              <img class="card-img-top" src="{{hemisphere.img_url}}" width="250" />
+              <!-- <div class="card-body"> -->
+              <p class="card-text">{{hemisphere.title}}</p>
+              <!-- </div>   -->
+            </div>
+          </div>
+          <!-- </div> -->
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  </div>
+  <!-- Bootstrap JavaScript -->
+  <!-- jQuery, Popper.js & Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>
