@@ -16,11 +16,14 @@ Complete your initial scraping using Jupyter Notebook, BeautifulSoup, Pandas, an
 * Create a Jupyter Notebook file called `mission_to_mars.ipynb`. Use this file to complete all your scraping and analysis tasks. The following information outlines what you need to scrape.
 
 ### NASA Mars News
+![image](https://user-images.githubusercontent.com/105729336/221997514-0b267e42-4c93-446c-816d-04a709f52ea7.png)
+
 
 * Scrape the [Mars News Site](https://redplanetscience.com/) and collect the latest News Title and Paragraph Text. Assign the text to variables that you can reference later.
 
 
 ### JPL Mars Space Images—Featured Image
+
 
 * Visit the URL for the Featured Space Image site [here](https://spaceimages-mars.com).
 
