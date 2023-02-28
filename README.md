@@ -52,7 +52,7 @@ Used MongoDB with Flask templating to create a new HTML page that displays all t
 
 * Started by converting your Jupyter notebook into a Python script called `scrape_mars.py` by using a function called `scrape`. This function executed all the scraping code from above and return one Python dictionary containing all the scraped data.
 
-* Next, created a route called `/scrape` that will import the `scrape_mars.py` script and call the `scrape` function.
+* Next, created a route called `/scrape` that imported the `scrape_mars.py` script and called the `scrape` function.
 
   * Stored the return value in Mongo as a Python dictionary.
 
