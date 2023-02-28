@@ -1,68 +1,61 @@
-# web-scraping-challenge
+# Using upyter Notebook, BeautifulSoup, Pandas, Requests/Splinter, MongoDB,Flask 
 Scraping data related to Mission to Mars and displaying the info in a single html page
 
-The instructions for this assignment are divided into three parts: 
+There are 2 parts to this 
 
 1. Scraping 
 
 2. MongoDB and Flask Application
 
-3. Submission 
+
 
 ## Part  1: Scraping
 
-Complete your initial scraping using Jupyter Notebook, BeautifulSoup, Pandas, and Requests/Splinter.
+Completed the initial scraping using Jupyter Notebook, BeautifulSoup, Pandas, and Requests/Splinter.
 
-* Create a Jupyter Notebook file called `mission_to_mars.ipynb`. Use this file to complete all your scraping and analysis tasks. The following information outlines what you need to scrape.
+* Created a Jupyter Notebook file called `mission_to_mars.ipynb`. Used this file to complete all the scraping and analysis tasks. The following information outlines what to scrape.
 
 ### NASA Mars News
 ![image](https://user-images.githubusercontent.com/105729336/221997514-0b267e42-4c93-446c-816d-04a709f52ea7.png)
 
 
-* Scrape the [Mars News Site](https://redplanetscience.com/) and collect the latest News Title and Paragraph Text. Assign the text to variables that you can reference later.
+* Scraped the [Mars News Site](https://redplanetscience.com/) and collect the latest News Title and Paragraph Text. Assigned the text to variables that can be referenced later.
 
 
 ### JPL Mars Space Images—Featured Image
 ![image](https://user-images.githubusercontent.com/105729336/221997732-b8b139ea-4b8c-467b-b4a6-e980491b8f44.png)
 
 
-* Visit the URL for the Featured Space Image site [here](https://spaceimages-mars.com).
+* Visited the Featured Space Image site [here](https://spaceimages-mars.com).
 
-* Use Splinter to navigate the site and find the image URL for the current Featured Mars Image, then assign the URL string to a variable called `featured_image_url`.
-
-* Be sure to find the image URL to the full-sized `.jpg` image.
-
-* Be sure to save a complete URL string for this image.
+* Used Splinter to navigate the site and find the image URL for the current Featured Mars Image, then assigned the URL string to a variable called `featured_image_url`.
 
 
 ### Mars Facts
 
-* Visit the [Mars Facts webpage](https://galaxyfacts-mars.com) and use Pandas to scrape the table containing facts about the planet including diameter, mass, etc.
+* Visited the [Mars Facts webpage](https://galaxyfacts-mars.com) and use Pandas to scrape the table containing facts about the planet including diameter, mass, etc.
 
-* Use Pandas to convert the data to a HTML table string.
+* Used Pandas to convert the data to a HTML table string.
 
 ### Mars Hemispheres
 ![image](https://user-images.githubusercontent.com/105729336/221997980-cc5e94c6-90f7-4ab3-b9c8-8d5d748cfbe3.png)
 
+* Visited the [astrogeology site](https://marshemispheres.com/) to obtain high-resolution images for each hemisphere of Mars.
 
-* Visit the [astrogeology site](https://marshemispheres.com/) to obtain high-resolution images for each hemisphere of Mars.
+* Saved the image URL string for the full resolution hemisphere image and the hemisphere title containing the hemisphere name. Used a Python dictionary to store the data using the keys `img_url` and `title`.
 
-* You will need to click each of the links to the hemispheres in order to find the image URL to the full-resolution image.
-
-* Save the image URL string for the full resolution hemisphere image and the hemisphere title containing the hemisphere name. Use a Python dictionary to store the data using the keys `img_url` and `title`.
-
-* Append the dictionary with the image URL string and the hemisphere title to a list. This list will contain one dictionary for each hemisphere.
+* Appended the dictionary with the image URL string and the hemisphere title to a list. This list contains one dictionary for each hemisphere.
 
 ## Part 2: MongoDB and Flask Application
 
-Use MongoDB with Flask templating to create a new HTML page that displays all the information that was scraped from the URLs above.
+Used MongoDB with Flask templating to create a new HTML page that displays all the information that was scraped from the URLs above.
 
-* Start by converting your Jupyter notebook into a Python script called `scrape_mars.py` by using a function called `scrape`. This function should  execute all your scraping code from above and return one Python dictionary containing all the scraped data.
+* Started by converting your Jupyter notebook into a Python script called `scrape_mars.py` by using a function called `scrape`. This function executed all the scraping code from above and return one Python dictionary containing all the scraped data.
 
-* Next, create a route called `/scrape` that will import your `scrape_mars.py` script and call your `scrape` function.
+* Next, created a route called `/scrape` that will import the `scrape_mars.py` script and call the `scrape` function.
 
-  * Store the return value in Mongo as a Python dictionary.
+  * Stored the return value in Mongo as a Python dictionary.
 
-* Create a root route `/` that will query your Mongo database and pass the Mars data into an HTML template for displaying the data.
+* Created a root route `/` that will query the Mongo database and pass the Mars data into an HTML template for displaying the data.
 
-* Create a template HTML file called `index.html` that will take the Mars data dictionary and display all the data in the appropriate HTML elements. Use the following as a guide for what the final product should look like, but feel free to create your own design.
+* Created a template HTML file called `index.html` that took the Mars data dictionary and displayed all the data in the appropriate HTML elements. 
