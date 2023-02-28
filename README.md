@@ -42,6 +42,8 @@ Complete your initial scraping using Jupyter Notebook, BeautifulSoup, Pandas, an
 * Use Pandas to convert the data to a HTML table string.
 
 ### Mars Hemispheres
+![image](https://user-images.githubusercontent.com/105729336/221997980-cc5e94c6-90f7-4ab3-b9c8-8d5d748cfbe3.png)
+
 
 * Visit the [astrogeology site](https://marshemispheres.com/) to obtain high-resolution images for each hemisphere of Mars.
 
